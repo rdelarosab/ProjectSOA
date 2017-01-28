@@ -10,21 +10,21 @@ namespace ProjectNLayer.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly DemoBL _demoBL;
+        private readonly OrdenBL _ordenBL;
 
         public HomeController()
         {
-            _demoBL = new DemoBL();
+            _ordenBL = new OrdenBL();
         }
 
         // GET: Home
         public ActionResult Index()
         {
-            var indexVM = new DemoVM();
-            indexVM.DemoId = 1;
-            var resultado = _demoBL.GetLstDemo();            
-            ViewBag.DemoCBO = new SelectList(resultado, "DemoId", "DemoName");
-            return View(indexVM);
+            //var indexVM = new DemoVM();
+            //indexVM.DemoId = 1;
+            var resultado = _ordenBL.GetOrdenById();            
+            //ViewBag.DemoCBO = new SelectList(resultado, "DemoId", "DemoName");
+            return View();
         }
     }
 }
